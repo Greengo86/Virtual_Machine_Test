@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Виртуальная машина</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+<div class="container">
+    {% block content %}
+        <label>Запрос Новой T OPIR </label>
+        <form method="POST" class="form-horizontal">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Запросить</button>
+        </form>
+    {% endblock %}
+</div>
+</body>
+</html>
+
+<!--        <div class="form-group">-->
+<!--            <select class="form-select" aria-label="Default select example">-->
+<!--              <option selected>Пул</option>-->
+<!--              <option value="1">One</option>-->
+<!--              <option value="2">Two</option>-->
+<!--              <option value="3">Three</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <select class="form-select" aria-label="Default select example">-->
+<!--              <option selected>Подразделение</option>-->
+<!--              <option value="1">One</option>-->
+<!--              <option value="2">Two</option>-->
+<!--              <option value="3">Three</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <select class="form-select" aria-label="Default select example">-->
+<!--              <option selected>Название ВМ Машины</option>-->
+<!--              <option value="1">One</option>-->
+<!--              <option value="2">Two</option>-->
+<!--              <option value="3">Three</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div class="ramslidecontainer">-->
+<!--          <label for="myRange1" class="form-label">Объем RAM, ГБ</label>-->
+<!--          <input type="range" min="1" max="8" value="1" step="1" class="slider" id="myRange1">-->
+<!--          <p><span id="demo1"></span> Гб</p>-->
+<!--        </div>-->
+<!--        <div class="cpuslidecontainer">-->
+<!--          <label for="myRange2" class="form-label">Количество Ядер vCPU</label>-->
+<!--          <input type="range" min="1" max="8" value="1" step="1" class="slider" id="myRange2">-->
+<!--          <p><span id="demo2"></span></p>-->
+<!--        </div>-->
+<!--        <div class="hddslidecontainer">-->
+<!--          <label for="myRange3" class="form-label">Объем HDD, ГБ</label>-->
+<!--          <input type="range" min="10" max="100" value="10" step="5" class="slider" id="myRange3">-->
+<!--          <p><span id="demo3"></span> Гб</p>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <div class="col-sm-offset-2 col-sm-10">-->
+<!--            <button type="submit" class="btn btn-default">Запросить</button>-->
+<!--          </div>-->
+<!--        </div>-->
+
+{% block scripts %}
+    <script>
+    var slider1 = document.getElementById("id_cpu");
+    var slider2 = document.getElementById("id_hdd");
+    var slider3 = document.getElementById("id_ram");
+    console.log(slider3)
+    // var output1 = document.getElementById("demo1");
+    // var output2 = document.getElementById("demo2");
+    // var output3 = document.getElementById("demo3");
+    // output1.innerHTML = slider1.value;
+    // output2.innerHTML = slider2.value;
+    // output3.innerHTML = slider3.value;
+
+    // slider1.oninput = function() {
+    //   output1.innerHTML = this.value;
+    // }
+    // slider2.oninput = function() {
+    //   output2.innerHTML = this.value;
+    // }
+    // slider3.oninput = function() {
+    //   output3.innerHTML = this.value;
+    // }
+    </script>
+{% endblock %}
