@@ -61,7 +61,7 @@ class VirtualMachineService:
     def get_token(self):
         if not VirtualMachineService.api_token:
             # Мой личный токен!!!! Удалить!!!
-            data = {"yandexPassportOauthToken": {'MY_SECRET_TOKEN'}}
+            data = {"yandexPassportOauthToken": "AQAAAAADxzoTAATuwdpWbJ_ZNU94pkuJU67MZtE"}
             res = requests.post('https://iam.api.cloud.yandex.net/iam/v1/tokens', json=data)
             if res.status_code == 200:
                 VirtualMachineService.api_token = res.json()['iamToken']
